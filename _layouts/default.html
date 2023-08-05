@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: "en" }}">
+  {%- include head.html -%}
+  <button id="mode"><span id="mode-text">🌕</span></button>
+  <body data-theme="{{ site.theme_config.appearance | default: "auto" }}">
+    <main class="page-content" aria-label="Content">
+      <div class="w">
+        {{ content }}
+      </div>
+    </main>
+
+    {% if page.custom_js %}
+      {% for js_file in page.custom_js %}
+        <script type="text/javascript" src="{{ site.baseurl }}/assets/js/{{ js_file }}.js"></script>
+      {% endfor %}
+    {% endif %}
+  </body>
+  <footer style="text-align: center; position: absolute; bottom: 0; width: 100%; height: 2.5rem;">
+    Website hosted on <a href='https://github.com/br337/br337.github.io'>github-pages</a>. Built with <a href='https://jekyllrb.com/'>Jekyll</a> using a fork of <a href='https://github.com/DeimosTheMisthios/no-style-please'>no-style-please</a> by <a href='https://github.com/DeimosTheMisthios'>Deimos</a>.
+  </footer>
+</html>
